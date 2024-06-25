@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "921757295091",
+    "project_id": "brain-tumer-tracker",
+    "storage_bucket": "brain-tumer-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921757295091:android:fc2572c3627a48c58c7286",
+        "android_client_info": {
+          "package_name": "com.example.brain_tumor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw3T2NVBhTvhaYNQXT46nLh7qvMNfRpro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
