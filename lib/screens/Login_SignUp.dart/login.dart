@@ -49,13 +49,15 @@ class _login_screenState extends State<login_screen> {
             children: [
               Container(
                 height: MediaQuery.of(context).size.height * (290 / 814),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     gradient: LinearGradient(
                         // begin: Alignment.topCenter,
                         // end: Alignment.bottomCenter,
                         colors: [
-                      Color(0xFF1B2B4D),
-                      Color(0xFF004F9A),
+                      // Color(0xFF1B2B4D),
+              // Color(0xFF004F9A),
+              Color(0xFF3D1C65),
+              Color(0xFF72519A),
                     ])),
               ),
               //we add padding istead of Alignment.bottomCenter to solve scrollable issue
@@ -64,7 +66,7 @@ class _login_screenState extends State<login_screen> {
                 padding: const EdgeInsets.only(top: 215.29),
                 child: Container(
                   height: MediaQuery.of(context).size.height * (570 / 814),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius:
                           BorderRadius.only(topLeft: Radius.circular(70))),
@@ -75,17 +77,17 @@ class _login_screenState extends State<login_screen> {
                       key: formstate,
                       child: Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           Text(
                             "Login",
                             style: GoogleFonts.inter(
                                 fontSize: 40,
-                                fontWeight: FontWeight.w900,
-                                color: Color(0xFF1B2B4D)),
+                                fontWeight: FontWeight.w700,
+                                color: const Color(0xFF3D1C65)),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           //Email Address TextFormField
@@ -100,7 +102,7 @@ class _login_screenState extends State<login_screen> {
                             child: Text(
                               S.of(context).emailAddress,
                               style: GoogleFonts.workSans(
-                                  color: Color(0xFF333333),
+                                  color: const Color(0xFF333333),
                                   fontSize: 17,
                                   fontWeight: FontWeight.w400),
                             ),
@@ -114,7 +116,7 @@ class _login_screenState extends State<login_screen> {
                               shadowColor: Colors.black,
                               child: TextFormField(
                                   controller: emailAddress,
-                                  cursorColor: Color(0xFF2F80ED),
+                                  cursorColor: const Color(0xFF3D1C65),
                                   //this mode to make the error apeare untill the user wirte it correct
                                   autovalidateMode:
                                       AutovalidateMode.onUserInteraction,
@@ -124,7 +126,7 @@ class _login_screenState extends State<login_screen> {
                                     fillColor: Colors.white,
                                     hintText: "abc@gmail.com",
                                     hintStyle: GoogleFonts.workSans(
-                                        color: Color(0xFF333333)
+                                        color: const Color(0xFF333333)
                                             .withOpacity(60 / 100),
                                         fontSize: 17,
                                         fontWeight: FontWeight.w400),
@@ -141,7 +143,7 @@ class _login_screenState extends State<login_screen> {
                                   }),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           //password TextFormField
@@ -152,7 +154,7 @@ class _login_screenState extends State<login_screen> {
                             child: Text(
                               S.of(context).password,
                               style: GoogleFonts.workSans(
-                                  color: Color(0xFF333333),
+                                  color: const Color(0xFF333333),
                                   fontSize: 17,
                                   fontWeight: FontWeight.w400),
                             ),
@@ -166,7 +168,7 @@ class _login_screenState extends State<login_screen> {
                               child: TextFormField(
                                 controller: password,
                                 obscureText: PasswordSecured,
-                                cursorColor: Color(0xFF2F80ED),
+                                cursorColor: const Color(0xFF3D1C65),
                                 //this mode to make the error apeare untill the user wirte it correct
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
@@ -176,7 +178,7 @@ class _login_screenState extends State<login_screen> {
                                     fillColor: Colors.white,
                                     hintText: "•••••••••••",
                                     hintStyle: GoogleFonts.workSans(
-                                        color: Color(0xFF333333)
+                                        color: const Color(0xFF333333)
                                             .withOpacity(60 / 100),
                                         fontSize: 17,
                                         fontWeight: FontWeight.w400),
@@ -187,9 +189,9 @@ class _login_screenState extends State<login_screen> {
                                         });
                                       },
                                       icon: PasswordSecured
-                                          ? Icon(Icons.visibility_off)
-                                          : Icon(Icons.visibility),
-                                      color: Color(0xFF333333)
+                                          ? const Icon(Icons.visibility_off)
+                                          : const Icon(Icons.visibility),
+                                      color: const Color(0xFF333333)
                                           .withOpacity(60 / 100),
                                     )),
                                 validator: (value) {
@@ -200,7 +202,7 @@ class _login_screenState extends State<login_screen> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 30),
+                          const SizedBox(height: 30),
                           //Login button
                           InkWell(
                             onTap: () async {
@@ -216,7 +218,7 @@ class _login_screenState extends State<login_screen> {
                                       context,
                                       MaterialPageRoute<void>(
                                         builder: (BuildContext context) =>
-                                            drawer(),
+                                            const drawer(),
                                       ),
                                     );
                                   } else {
@@ -270,9 +272,11 @@ class _login_screenState extends State<login_screen> {
                                   (343 / 366),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  gradient: LinearGradient(colors: [
-                                    Color(0xFF1B2B4D),
-                                    Color(0xFF004F9A),
+                                  gradient: const LinearGradient(colors: [
+                                    // Color(0xFF1B2B4D),
+              // Color(0xFF004F9A),
+              Color(0xFF3D1C65),
+              Color(0xFF72519A),
                                   ])),
                               child: Center(
                                 child: Text(
@@ -285,7 +289,7 @@ class _login_screenState extends State<login_screen> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           //ForgetPassword Button
@@ -295,17 +299,17 @@ class _login_screenState extends State<login_screen> {
                                   context,
                                   MaterialPageRoute<void>(
                                     builder: (BuildContext context) =>
-                                        forgetPassScreen(),
+                                        const forgetPassScreen(),
                                   ),
                                 );
                               },
                               child: Text(S.of(context).forgetPassword,
                                   style: GoogleFonts.inter(
-                                    color: Color(0xFF00939B),
+                                    color: const Color(0xFF8FA1E6),
                                     fontSize: 15,
-                                    fontWeight: FontWeight.w400,
+                                    fontWeight: FontWeight.w700,
                                   ))),
-                          Spacer(),
+                          const Spacer(),
                           //SignUp button
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -324,15 +328,15 @@ class _login_screenState extends State<login_screen> {
                                       context,
                                       MaterialPageRoute<void>(
                                         builder: (BuildContext context) =>
-                                            Sign_Up(),
+                                            const Sign_Up(),
                                       ),
                                     );
                                   },
                                   child: Text(S.of(context).signUp,
                                       style: GoogleFonts.inter(
-                                        color: Color(0xFF00939B),
+                                        color: const Color(0xFF8FA1E6),
                                         fontSize: 15,
-                                        fontWeight: FontWeight.w400,
+                                        fontWeight: FontWeight.w700,
                                       )))
                             ],
                           )
@@ -352,22 +356,22 @@ class _login_screenState extends State<login_screen> {
                         style: GoogleFonts.inter(
                             fontSize: 26,
                             fontWeight: FontWeight.w900,
-                            color: Color(0xFF7A9FD7)),
+                            color: const Color(0xFF8FA1E6)),
                       ),
                       TextSpan(
                         text: "T U M O R T R C K E R",
                         style: GoogleFonts.inter(
                             fontSize: 20,
                             fontWeight: FontWeight.w700,
-                            color: Color(0xFFF1FBFF)),
+                            color: const Color(0xFFF1FBFF)),
                       )
                     ]),
                   )),
               Positioned(
-                top: 74,
+                top: 60,
                 left: -4,
                 child: Image.asset(
-                  "assets/loginBrain.png",
+                  "assets/LoginBrain2.png",
                 ),
               ),
             ],

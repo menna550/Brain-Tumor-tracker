@@ -44,8 +44,10 @@ class _onbording_screenState extends State<onbording_screen> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-              Color(0xFF1B2B4D),
-              Color(0xFF004F9A),
+              // Color(0xFF1B2B4D),
+              // Color(0xFF004F9A),
+              Color(0xFF3D1C65),
+              Color(0xFF72519A),
             ])),
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -76,9 +78,9 @@ class _onbording_screenState extends State<onbording_screen> {
                     effect: const ExpandingDotsEffect(
                         dotHeight: 10,
                         dotWidth: 10,
-                        activeDotColor: Color(0xFF004F9A),
+                        activeDotColor: Color(0xFF3D1C65),
                         dotColor: Color(
-                          0xFFA3A3A3,
+                          0xFF8FA1E6,
                         )),
                   ),
                   const SizedBox(
@@ -99,7 +101,7 @@ class _onbording_screenState extends State<onbording_screen> {
                             height:
                                 MediaQuery.of(context).size.height * (44 / 800),
                             decoration: BoxDecoration(
-                                color: Color(0xFF084482),
+                                color: Color(0xFF3D1C65),
                                 borderRadius: BorderRadius.circular(45)),
                             child: Center(
                               child: Text(
@@ -128,7 +130,7 @@ class _onbording_screenState extends State<onbording_screen> {
                             height:
                                 MediaQuery.of(context).size.height * (44 / 800),
                             decoration: BoxDecoration(
-                                color: Color(0xFF084482),
+                                color: Color(0xFF3D1C65),
                                 borderRadius: BorderRadius.circular(45)),
                             child: Center(
                               child: Text(

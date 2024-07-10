@@ -22,7 +22,7 @@ class page2 extends StatelessWidget {
             Text("Connect to the \ninternet  to recieve \nthe result",style: GoogleFonts.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
-                      color: Color(0xFF385A64)),)
+                      color: Color(0xFF3D1C65)),)
           ],
         ),
     );

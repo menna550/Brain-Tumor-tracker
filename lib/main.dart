@@ -13,6 +13,7 @@ import 'package:brain_tumor/screens/splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 
@@ -27,6 +28,18 @@ void main() async {
           
       // FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance(); firebaseAppCheck.installAppCheckProviderFactory( SafetyNetAppCheckProviderFactory.getInstance());
   runApp(const MyApp());
+
+  AwesomeNotifications().initialize(
+    null,
+    [
+      NotificationChannel(channelKey: "basic_channel", 
+      channelName: "Basic notification", 
+      channelDescription: "notification channel for basic tests",
+      importance: NotificationImportance.Max
+      )
+    ],
+    debug: true,
+  );
 }
 
 class MyApp extends StatefulWidget {

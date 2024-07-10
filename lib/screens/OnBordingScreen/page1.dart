@@ -14,7 +14,9 @@ class page1 extends StatelessWidget {
           Container(
               height: MediaQuery.of(context).size.height * (266 / 800),
               width: MediaQuery.of(context).size.width * (223 / 360),
-              child: Image.asset('assets/artificial intelligence.png')),
+              // child: Image.asset('assets/artificial intelligence.png')),
+              child: Image.asset('assets/Man studies artificial intelligence.png')),
+
           SizedBox(
             height: 10,
           ),
@@ -28,7 +30,7 @@ class page1 extends StatelessWidget {
                 style: GoogleFonts.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.w900,
-                    color: Color(0xFF385A64)),
+                    color: Color(0xFF3D1C65)),
               ),
               Container(
                   height: MediaQuery.of(context).size.height * (21 / 800),
@@ -46,7 +48,7 @@ class page1 extends StatelessWidget {
                 style: GoogleFonts.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.w900,
-                    color: Color(0xFF385A64)),
+                    color: Color(0xFF3D1C65)),
               ),
             ],
           ),
@@ -63,7 +65,7 @@ class page1 extends StatelessWidget {
                 style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w900,
-                    color: Color(0xFF385A64)),
+                    color: Color(0xFF3D1C65)),
               ),
             ],
           )

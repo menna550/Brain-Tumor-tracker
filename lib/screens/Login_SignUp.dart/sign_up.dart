@@ -25,13 +25,12 @@ class _Sign_UpState extends State<Sign_Up> {
   TextEditingController confirmPassword = TextEditingController();
 
   //________firebaseStore to store details about users
-  Future addUserDetails(String fullName, String email)async{
-    await FirebaseFirestore.instance.collection("users").add({
-      "name": fullName,
-      "email": email
-    });
-
+  Future addUserDetails(String fullName, String email) async {
+    await FirebaseFirestore.instance
+        .collection("users")
+        .add({"name": fullName, "email": email});
   }
+
   //____________ fetch the user's first name
   Future<String?> getFullName(String email) async {
     final querySnapshot = await FirebaseFirestore.instance
@@ -55,13 +54,16 @@ class _Sign_UpState extends State<Sign_Up> {
             children: [
               Container(
                 height: MediaQuery.of(context).size.height * (180 / 814),
+                // ignore: prefer_const_constructors
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                         // begin: Alignment.topCenter,
                         // end: Alignment.bottomCenter,
                         colors: [
-                      Color(0xFF1B2B4D),
-                      Color(0xFF004F9A),
+                      // Color(0xFF1B2B4D),
+                      // Color(0xFF004F9A),
+                      Color(0xFF3D1C65),
+                      Color(0xFF72519A),
                     ])),
                 child: Padding(
                   padding: const EdgeInsets.all(15),
@@ -71,7 +73,7 @@ class _Sign_UpState extends State<Sign_Up> {
                       "Sign Up",
                       style: GoogleFonts.inter(
                           fontSize: 40,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: Colors.white),
                     ),
                   ),
@@ -81,7 +83,7 @@ class _Sign_UpState extends State<Sign_Up> {
                 padding: const EdgeInsets.only(top: 106.92),
                 child: Container(
                   height: MediaQuery.of(context).size.height * (700 / 814),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius:
                           BorderRadius.only(topLeft: Radius.circular(70))),
@@ -100,7 +102,7 @@ class _Sign_UpState extends State<Sign_Up> {
                             shadowColor: Colors.black,
                             child: TextFormField(
                                 controller: fullName,
-                                cursorColor: Color(0xFF2F80ED),
+                                cursorColor: const Color(0xFF3D1C65),
                                 //this mode to make the error apeare untill the user wirte it correct
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
@@ -110,7 +112,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                   fillColor: Colors.white,
                                   hintText: S.of(context).FullName,
                                   hintStyle: GoogleFonts.workSans(
-                                      color: Color(0xFF333333)
+                                      color: const Color(0xFF333333)
                                           .withOpacity(60 / 100),
                                       fontSize: 17,
                                       fontWeight: FontWeight.w400),
@@ -132,7 +134,7 @@ class _Sign_UpState extends State<Sign_Up> {
                             shadowColor: Colors.black,
                             child: TextFormField(
                                 controller: emailAddress,
-                                cursorColor: Color(0xFF2F80ED),
+                                cursorColor: const Color(0xFF3D1C65),
                                 //this mode to make the error apeare untill the user wirte it correct
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
@@ -142,7 +144,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                   fillColor: Colors.white,
                                   hintText: S.of(context).emailAddress,
                                   hintStyle: GoogleFonts.workSans(
-                                      color: Color(0xFF333333)
+                                      color: const Color(0xFF333333)
                                           .withOpacity(60 / 100),
                                       fontSize: 17,
                                       fontWeight: FontWeight.w400),
@@ -170,7 +172,7 @@ class _Sign_UpState extends State<Sign_Up> {
                             child: TextFormField(
                               controller: password,
                               obscureText: PasswordSecured,
-                              cursorColor: Color(0xFF2F80ED),
+                              cursorColor: const Color(0xFF3D1C65),
                               //this mode to make the error apeare untill the user wirte it correct
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
@@ -180,7 +182,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                   fillColor: Colors.white,
                                   hintText: S.of(context).password,
                                   hintStyle: GoogleFonts.workSans(
-                                      color: Color(0xFF333333)
+                                      color: const Color(0xFF333333)
                                           .withOpacity(60 / 100),
                                       fontSize: 17,
                                       fontWeight: FontWeight.w400),
@@ -191,10 +193,10 @@ class _Sign_UpState extends State<Sign_Up> {
                                       });
                                     },
                                     icon: PasswordSecured
-                                        ? Icon(Icons.visibility_off)
-                                        : Icon(Icons.visibility),
-                                    color:
-                                        Color(0xFF333333).withOpacity(60 / 100),
+                                        ? const Icon(Icons.visibility_off)
+                                        : const Icon(Icons.visibility),
+                                    color: const Color(0xFF333333)
+                                        .withOpacity(60 / 100),
                                   )),
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -219,7 +221,7 @@ class _Sign_UpState extends State<Sign_Up> {
                             child: TextFormField(
                               controller: confirmPassword,
                               obscureText: ConfirmPasswordSecured,
-                              cursorColor: Color(0xFF2F80ED),
+                              cursorColor: const Color(0xFF3D1C65),
                               //this mode to make the error apeare untill the user wirte it correct
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
@@ -229,7 +231,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                   fillColor: Colors.white,
                                   hintText: S.of(context).ConfirmPassword,
                                   hintStyle: GoogleFonts.workSans(
-                                      color: Color(0xFF333333)
+                                      color: const Color(0xFF333333)
                                           .withOpacity(60 / 100),
                                       fontSize: 17,
                                       fontWeight: FontWeight.w400),
@@ -241,10 +243,10 @@ class _Sign_UpState extends State<Sign_Up> {
                                       });
                                     },
                                     icon: ConfirmPasswordSecured
-                                        ? Icon(Icons.visibility_off)
-                                        : Icon(Icons.visibility),
-                                    color:
-                                        Color(0xFF333333).withOpacity(60 / 100),
+                                        ? const Icon(Icons.visibility_off)
+                                        : const Icon(Icons.visibility),
+                                    color: const Color(0xFF333333)
+                                        .withOpacity(60 / 100),
                                   )),
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -270,8 +272,9 @@ class _Sign_UpState extends State<Sign_Up> {
                                   email: emailAddress.text,
                                   password: password.text,
                                 );
-                                addUserDetails(fullName.text, emailAddress.text);
-                                
+                                addUserDetails(
+                                    fullName.text, emailAddress.text);
+
                                 FirebaseAuth.instance.currentUser!
                                     .sendEmailVerification();
                                 showDialog(
@@ -298,8 +301,8 @@ class _Sign_UpState extends State<Sign_Up> {
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
-                                    contentPadding:
-                                        EdgeInsets.only(bottom: 50, top: 15),
+                                    contentPadding: const EdgeInsets.only(
+                                        bottom: 50, top: 15),
                                     actions: [
                                       Row(
                                         mainAxisAlignment:
@@ -312,22 +315,22 @@ class _Sign_UpState extends State<Sign_Up> {
                                                 MaterialPageRoute<void>(
                                                   builder:
                                                       (BuildContext context) =>
-                                                          login_screen(),
+                                                          const login_screen(),
                                                 ),
                                               );
                                             },
                                             child: Text(
                                               S.of(context).LoginNow,
                                               style: GoogleFonts.inter(
-                                                color: Color(0xFF2F80ED),
+                                                color: const Color(0xFF3D1C65),
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w400,
                                               ),
                                             ),
                                           ),
-                                          Icon(
+                                          const Icon(
                                             Icons.arrow_right_alt_outlined,
-                                            color: Color(0xFF2F80ED),
+                                            color: Color(0xFF3D1C65),
                                           )
                                         ],
                                       )
@@ -361,9 +364,11 @@ class _Sign_UpState extends State<Sign_Up> {
                                 MediaQuery.of(context).size.width * (343 / 366),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                gradient: LinearGradient(colors: [
-                                  Color(0xFF1B2B4D),
-                                  Color(0xFF004F9A),
+                                gradient: const LinearGradient(colors: [
+                                  // Color(0xFF1B2B4D),
+                                  // Color(0xFF004F9A),
+                                  Color(0xFF3D1C65),
+                                  Color(0xFF72519A),
                                 ])),
                             child: Center(
                               child: Text(
@@ -396,15 +401,15 @@ class _Sign_UpState extends State<Sign_Up> {
                                     context,
                                     MaterialPageRoute<void>(
                                       builder: (BuildContext context) =>
-                                          login_screen(),
+                                          const login_screen(),
                                     ),
                                   );
                                 },
                                 child: Text(S.of(context).login,
                                     style: GoogleFonts.inter(
-                                      color: Color(0xFF00939B),
+                                      color: const Color(0xFF8FA1E6),
                                       fontSize: 15,
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w700,
                                     )))
                           ],
                         )

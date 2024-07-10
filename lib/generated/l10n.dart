@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `Make sure to enter 4 photos of\nMRI or CT scan`
+  /// `Make sure to enter photos of\nMRI or CT scan`
   String get paragraph2 {
     return Intl.message(
-      'Make sure to enter 4 photos of\nMRI or CT scan',
+      'Make sure to enter photos of\nMRI or CT scan',
       name: 'paragraph2',
       desc: '',
       args: [],

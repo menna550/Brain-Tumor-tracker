@@ -41,7 +41,9 @@ void _setScreen(String screen) {
   Widget build(BuildContext context) {
     return Container(
       // color:Color.fromARGB(129, 0, 80, 154) ,
-      color: Color.fromARGB(255, 157, 199, 238),
+      // color: Color.fromARGB(255, 157, 199, 238),
+      // color: Color(0xFF8FA1E6),
+      color: Color(0xFFDBD5E9),
 
       child: AdvancedDrawer(
           rtlOpening: isArabic ? true : false,
@@ -73,7 +75,7 @@ void _setScreen(String screen) {
                 height: 40,
               ),
               Image.asset(
-                "assets/user3.png",
+                "assets/profile (1).png",
                 width: 70.0,
                 height: 70.0,
               ),
@@ -86,7 +88,7 @@ void _setScreen(String screen) {
                 style: GoogleFonts.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
-                    color: Color(0xFF004F9A)),
+                    color: Color(0xFF3D1C65)),
               ),
               SizedBox(
                 height: 20,
@@ -107,14 +109,14 @@ void _setScreen(String screen) {
                     onTap: () => _setScreen('home'),
                     leading: Icon(
                       Icons.home,
-                      color: Color(0xFF004F9A),
+                      color: Color(0xFF3D1C65),
                     ),
                     title: Text(
                       S.of(context).home,
                       style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: Color(0xFF004F9A)),
+                          color: Color(0xFF3D1C65)),
                     ),
                   ),
                   //_______________Language
@@ -133,7 +135,7 @@ void _setScreen(String screen) {
                                       },
                                       child: Icon(
                                         Icons.close_rounded,
-                                        color: Color(0xFF004F9A),
+                                        color: Color(0xFF3D1C65),
                                       ),
                                     ),
                                     Text(
@@ -141,7 +143,7 @@ void _setScreen(String screen) {
                                       style: GoogleFonts.inter(
                                           fontSize: 20,
                                           fontWeight: FontWeight.w700,
-                                          color: Color(0xFF004F9A)),
+                                          color: Color(0xFF3D1C65)),
                                     )
                                   ],
                                 ),
@@ -153,7 +155,7 @@ void _setScreen(String screen) {
                                           title: Text("English"),
                                           value: Language.english,
                                           groupValue: _selectedLanguage,
-                                          activeColor: Color(0xFF004F9A),
+                                          activeColor: Color(0xFF3D1C65),
                                           onChanged: (Language? value) {
                                             setState(() {
                                               _selectedLanguage = value;
@@ -170,7 +172,7 @@ void _setScreen(String screen) {
                                           title: Text("العربية"),
                                           value: Language.arabic,
                                           groupValue: _selectedLanguage,
-                                          activeColor: Color(0xFF004F9A),
+                                          activeColor: Color(0xFF3D1C65),
                                           onChanged: (Language? value) {
                                             setState(() {
                                               _selectedLanguage = value;
@@ -190,14 +192,14 @@ void _setScreen(String screen) {
                     },
                     leading: Icon(
                       Icons.language,
-                      color: Color(0xFF004F9A),
+                      color: Color(0xFF3D1C65),
                     ),
                     title: Text(
                       S.of(context).language,
                       style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: Color(0xFF004F9A)),
+                          color: Color(0xFF3D1C65)),
                     ),
                   ),
                   //__________________________About Us
@@ -205,14 +207,14 @@ void _setScreen(String screen) {
                     onTap: () => _setScreen('about'),
                     leading: Icon(
                       Icons.people,
-                      color: Color(0xFF004F9A),
+                      color: Color(0xFF3D1C65),
                     ),
                     title: Text(
                       S.of(context).aboutUs,
                       style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: Color(0xFF004F9A)),
+                          color: Color(0xFF3D1C65)),
                     ),
                   ),
                   //_________________________Log Out
@@ -223,7 +225,7 @@ void _setScreen(String screen) {
                           builder: (context) => AlertDialog(
                                 title: Text(S.of(context).LogOut_Ques),
                                 titleTextStyle: GoogleFonts.inter(
-                                  color: Color(0xFF004F9A),
+                                  color: Color(0xFF3D1C65),
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -238,7 +240,7 @@ void _setScreen(String screen) {
                                           },
                                           child: Text(S.of(context).cancel,
                                               style: GoogleFonts.inter(
-                                                color: Color(0xFF004F9A),
+                                                color: Color(0xFF3D1C65),
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
                                               ))),
@@ -261,14 +263,14 @@ void _setScreen(String screen) {
                     },
                     leading: Icon(
                       Icons.logout,
-                      color: Color(0xFF004F9A),
+                      color: Color(0xFF3D1C65),
                     ),
                     title: Text(
                       S.of(context).logOut,
                       style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: Color(0xFF004F9A)),
+                          color: Color(0xFF3D1C65)),
                     ),
                   ),
                 ],

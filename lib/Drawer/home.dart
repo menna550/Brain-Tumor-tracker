@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:brain_tumor/Drawer/drawer.dart';
 import 'package:brain_tumor/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -12,7 +13,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 class home extends StatefulWidget {
-
   const home({super.key});
 
   @override
@@ -20,23 +20,46 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-  //_________Notification
-  Future<void> getToken() async {
-  try {
-    final token = await FirebaseMessaging.instance.getToken();
-    print('FCM Token: $token');
-  } catch (e) {
-    print('Error getting FCM token: $e');
-  }
-}
+  //_________Notification by token
+//   Future<void> getToken() async {
+//   try {
+//     final token = await FirebaseMessaging.instance.getToken();
+//     print('FCM Token: $token');
+//   } catch (e) {
+//     print('Error getting FCM token: $e');
+//   }
+// }
 
-@override
+// @override
+//   void initState() {
+//     getToken();
+//     super.initState();
+//   }
+//_________________________Awesome Notification to send pic
+  @override
   void initState() {
-    getToken();
+    AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
+      if (!isAllowed) {
+        AwesomeNotifications().requestPermissionToSendNotifications();
+      }
+    });
     super.initState();
   }
 
-
+  triggreNotification() {
+    AwesomeNotifications().createNotification(
+        content: NotificationContent(
+      id: 10,
+      channelKey: "basic_channel",
+      title: "Brain Tumer Result",
+      body:
+          "Hi Menna. We here for helping you and to be better. We show and explain to you in this image the areas of evidence for the possibility of cancer in these areas Therefore you can quickly follow up and solve the problem at its inception Green color refer to edema region, Bink color refer to enhancing region, and blue color refer to care region if there is no color this means that there is no tumor",
+      bigPicture: "https://storage.googleapis.com/kagglesdsdata/datasets/1608934/2645886/Testing/meningioma/Te-me_0017.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=databundle-worker-v2%40kaggle-161607.iam.gserviceaccount.com%2F20240629%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240629T072802Z&X-Goog-Expires=345600&X-Goog-SignedHeaders=host&X-Goog-Signature=571603b0fa8e3540f7e3b144996d1d6774a6d695f056057e95e4cc188d6e32f97cde3aa6f4a80b7eb61285637f9ecd82e574cea9de3559898016bf00a1bf0781cc4c06ab67eed829f9c403ea863fbc83f391fd4d03d445cabaf9aa4966303394aecbc9e7490b9aa67a7e34eb297fbcc9b2d928bee7ad5783b885ad9b21c4b52a776b33cd8c617ebc0578c00c5a2d0913d88125dcc2f74f111f1238638e984ff0533d0feea658d0cc6d0d6619ac2de34dfb508f931d4e162a521fab0bb64b16b4cac190a7591ee634b58b3b4735f501596d94127a1a0ce1eb9cb60e4d01a1b5e1e15e49c5773d79d46c945d1c05a368828272aac9a0049bbd4253624d14b3e2e4",
+      largeIcon: "https://imagepng.org/wp-content/uploads/2019/08/google-icon-1.png",
+      
+      notificationLayout: NotificationLayout.BigPicture,
+    ));
+  }
 
   //_____Multiply imagePicker syntax
   final ImagePicker _picker = ImagePicker();
@@ -51,7 +74,7 @@ class _homeState extends State<home> {
               false, // This line prevents the dialog from closing when tapping outside
           context: context,
           builder: (context) {
-            Future.delayed(Duration(seconds: 5), () {
+            Future.delayed(const Duration(seconds: 5), () {
               Navigator.of(context).pop();
             });
 
@@ -74,10 +97,10 @@ class _homeState extends State<home> {
                 // Image.asset("assets/Animation2.gif",width: 60,height: 60,),
                 TweenAnimationBuilder(
                     tween: Tween(begin: 05.0, end: 0),
-                    duration: Duration(seconds: 5),
+                    duration: const Duration(seconds: 5),
                     builder: (context, value, child) => Text(
                           "00:${value.toInt()}",
-                          style: TextStyle(fontSize: 15, color: Colors.black),
+                          style: const TextStyle(fontSize: 15, color: Colors.black),
                         ))
               ],
             ));
@@ -91,7 +114,7 @@ class _homeState extends State<home> {
                   textAlign: TextAlign.center,
                 ),
                 titleTextStyle: GoogleFonts.inter(
-                  color: Color(0xFF004F9A),
+                  color: const Color(0xFF004F9A),
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
@@ -99,14 +122,14 @@ class _homeState extends State<home> {
     }
   }
   //_________________ get data from Firebase
-  // create List to put data on it 
+  // create List to put data on it
   // List data = [];
-  // // create function to get data and make setstate on it 
+  // // create function to get data and make setstate on it
   // getData()async{
   //   QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection("users").get();
   //   data.addAll(querySnapshot.docs);
   //   setState(() {
-      
+
   //   });
   // }
   // @override
@@ -114,8 +137,6 @@ class _homeState extends State<home> {
   //   getData();
   //   super.initState();
   // }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -126,8 +147,13 @@ class _homeState extends State<home> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-              Color(0xFF004F9A),
-              Color(0xFF1B2B4D),
+              // Color(0xFF1B2B4D),
+              // Color(0xFF004F9A),
+              
+              Color(0xFF3D1C65),
+              Color(0xFF9F8FB7),
+              // Color(0xFFDBD5E9),
+              // Color(0xFF72519A),
             ])),
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -147,14 +173,14 @@ class _homeState extends State<home> {
                   style: GoogleFonts.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
-                      color: Color(0xFF7A9FD7)),
+                      color: const Color(0xFF8FA1E6)),
                 ),
                 TextSpan(
                   text: "T U M O R T R C K E R",
                   style: GoogleFonts.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
-                      color: Color(0xFFF1FBFF)),
+                      color: const Color(0xFFF1FBFF)),
                 )
               ]),
             ),
@@ -167,16 +193,27 @@ class _homeState extends State<home> {
                 // isArabic
                 //     ? Positioned(child: Image.asset("assets/brainHome2.png"),top: 150,left: 90,)
                 //     : Positioned(child: Image.asset("assets/brainHome2.png"),top: 150,left: 90,),
+                // isArabic
+                //     ? Positioned(
+                //         top: 170,
+                //         right: 40,
+                //         child: Image.asset("assets/ArabicBrain.png"),
+                //       )
+                //     : Positioned(
+                //         child: Image.asset("assets/brainHome2.png"),
+                //         top: 150,
+                //         left: 90,
+                //       ),
                 isArabic
                     ? Positioned(
                         top: 170,
                         right: 40,
-                        child: Image.asset("assets/ArabicBrain.png"),
+                        child: Image.asset("assets/ArabicPurpleHomeBrain.png"),
                       )
                     : Positioned(
-                        child: Image.asset("assets/brainHome2.png"),
+                        child: Image.asset("assets/purpleHomeBrain2.png"),
                         top: 150,
-                        left: 90,
+                        left: 45,
                       ),
                 //_______________________the content of the page include text , container
 
@@ -187,21 +224,19 @@ class _homeState extends State<home> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           // for (int i in data)
-                          Text("${S.of(context).Hi} "
-                            
-          
-                            ,
+                          Text(
+                            "${S.of(context).Hi} ",
                             style: GoogleFonts.inriaSans(
                               color: Colors.white,
                               fontSize: 32,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           Text(
@@ -212,7 +247,7 @@ class _homeState extends State<home> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text(
@@ -237,14 +272,14 @@ class _homeState extends State<home> {
                               child: Text(
                                 S.of(context).Detection,
                                 style: GoogleFonts.inriaSans(
-                                  color: Color(0xFF004F9A),
+                                  color: Colors.black87,
                                   fontSize: 24,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 90,
                           ),
                           Container(
@@ -257,14 +292,14 @@ class _homeState extends State<home> {
                               child: Text(
                                 S.of(context).segmentation,
                                 style: GoogleFonts.inriaSans(
-                                  color: Color(0xFF004F9A),
+                                  color: Colors.black87,
                                   fontSize: 24,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 70,
                           ),
                           RichText(
@@ -296,7 +331,7 @@ class _homeState extends State<home> {
                                               style: GoogleFonts.inter(
                                                   fontSize: 17,
                                                   fontWeight: FontWeight.w700,
-                                                  color: Color(0xFF004F9A)),
+                                                  color: const Color(0xFF3D1C65)),
                                             ),
                                           ),
                                           Text(
@@ -304,7 +339,7 @@ class _homeState extends State<home> {
                                             style: GoogleFonts.inter(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.w500,
-                                                color: Color(0xFF004F9A)),
+                                                color: const Color(0xFF3D1C65)),
                                           ),
                                           Padding(
                                             padding: isArabic
@@ -321,7 +356,7 @@ class _homeState extends State<home> {
                                               style: GoogleFonts.inter(
                                                   fontSize: 17,
                                                   fontWeight: FontWeight.w700,
-                                                  color: Color(0xFF004F9A)),
+                                                  color: const Color(0xFF3D1C65)),
                                             ),
                                           ),
                                           Text(
@@ -331,7 +366,7 @@ class _homeState extends State<home> {
                                             style: GoogleFonts.inter(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.w500,
-                                                color: Color(0xFF004F9A)),
+                                                color: const Color(0xFF3D1C65)),
                                           ),
                                         ],
                                       ),
@@ -343,12 +378,12 @@ class _homeState extends State<home> {
                                   style: GoogleFonts.inter(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w800,
-                                      color: Color(0xFF58BBF7)),
+                                      color: const Color(0xFF3D1C65)),
                                 ),
                               )),
                             ]),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           )
                         ],
@@ -363,23 +398,28 @@ class _homeState extends State<home> {
                       Padding(
                         //to handel the posotion if it Arabic
                         padding: isArabic
-                            ? EdgeInsets.only(right: 125, top: 470)
-                            : EdgeInsets.only(left: 125, top: 470),
+                            ? const EdgeInsets.only(right: 125, top: 470)
+                            : const EdgeInsets.only(left: 125, top: 470),
 
                         child: InkWell(
                           onTap: () {
                             selectImages();
+                            Future.delayed(const Duration(seconds: 20), () {
+                              triggreNotification(); // Second function after 10 seconds
+                            });
                           },
                           child: Container(
                             height: 108,
                             width: 108,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 gradient: LinearGradient(
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                     colors: [
-                                      Color(0xFF58BBF7),
-                                      Color(0xFF004F9A)
+                                      // Color(0xFF58BBF7),
+                                      // Color(0xFF004F9A),
+                                      Color(0xFF6B5289),
+                                      Color(0xFF8FA1E6)
                                     ]),
                                 shape: BoxShape.circle),
                             child: Image.asset("assets/photo-camera 1.png"),
@@ -396,23 +436,28 @@ class _homeState extends State<home> {
                       Padding(
                         //to handel the posotion if it Arabic
                         padding: isArabic
-                            ? EdgeInsets.only(right: 125, top: 730)
-                            : EdgeInsets.only(left: 125, top: 730),
+                            ? const EdgeInsets.only(right: 125, top: 730)
+                            : const EdgeInsets.only(left: 125, top: 730),
 
                         child: InkWell(
                           onTap: () {
                             selectImages();
+                            Future.delayed(const Duration(seconds: 20), () {
+                              triggreNotification(); // Second function after 10 seconds
+                            });
                           },
                           child: Container(
                             height: 108,
                             width: 108,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 gradient: LinearGradient(
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                     colors: [
-                                      Color(0xFF58BBF7),
-                                      Color(0xFF004F9A)
+                                      // Color(0xFF58BBF7),
+                                      // Color(0xFF004F9A),
+                                      Color(0xFF6B5289),
+                                      Color(0xFF8FA1E6)
                                     ]),
                                 shape: BoxShape.circle),
                             child: Image.asset("assets/photo-camera 1.png"),

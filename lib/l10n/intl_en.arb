@@ -1,7 +1,7 @@
 {
     "Hi": "Welcome! ",
     "paragraph": "We hope you speed recovery\nLet’s check on your health",
-    "paragraph2":"Make sure to enter 4 photos of\nMRI or CT scan",
+    "paragraph2":"Make sure to enter photos of\nMRI or CT scan",
     "Detection":"If you want to make\nDetection process ",
     "segmentation":"If you want to make\nSegmentation process",
     "home": "Home",

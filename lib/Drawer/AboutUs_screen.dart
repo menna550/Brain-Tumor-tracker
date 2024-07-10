@@ -16,8 +16,11 @@ class aboutUs extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-              Color(0xFF004F9A),
-              Color(0xFF1B2B4D),
+              // Color(0xFF1B2B4D),
+              // Color(0xFF004F9A),
+              Color(0xFF3D1C65),
+              Color(0xFF9F8FB7),
+              // Color(0xFF72519A),
             ])),
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -141,7 +144,7 @@ class aboutUs extends StatelessWidget {
                               style: GoogleFonts.inter(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w900,
-                                  color: Color(0xFF7A9FD7)),
+                                  color: Color(0xFF8FA1E6)),
                             ),
                             TextSpan(
                               text: "T U M O R T R C K E R",
@@ -152,7 +155,7 @@ class aboutUs extends StatelessWidget {
                             )
                           ]),
                         ),
-                        Image.asset("assets/aboutUsBrain.png")
+                        Image.asset("assets/smallBrain.png")
                       ],
                     ),
                   )

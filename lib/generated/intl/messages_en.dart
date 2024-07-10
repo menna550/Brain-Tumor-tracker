@@ -97,7 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "paragraph": MessageLookupByLibrary.simpleMessage(
             "We hope you speed recovery\nLet’s check on your health"),
         "paragraph2": MessageLookupByLibrary.simpleMessage(
-            "Make sure to enter 4 photos of\nMRI or CT scan"),
+            "Make sure to enter photos of\nMRI or CT scan"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "segmentation": MessageLookupByLibrary.simpleMessage(
             "If you want to make\nSegmentation process"),

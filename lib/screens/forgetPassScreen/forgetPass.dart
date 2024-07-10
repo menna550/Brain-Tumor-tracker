@@ -46,7 +46,7 @@ class _forgetPassScreenState extends State<forgetPassScreen> {
                           );
                         },
                         icon: Icon(Icons.arrow_back))),
-                Image.asset("assets/illustration.png"),
+                Image.asset("assets/Women Web Developer with laptop.png"),
                 SizedBox(
                   height: 30,
                 ),
@@ -75,7 +75,7 @@ class _forgetPassScreenState extends State<forgetPassScreen> {
                   padding: const EdgeInsets.all(20.0),
                   child: TextFormField(
                     controller: _emailAddress,
-                    cursorColor: Color(0xFF2F80ED),
+                    cursorColor: Color(0xFF3D1C65),
                     //this mode to make the error apeare untill the user wirte it correct
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
@@ -125,7 +125,7 @@ class _forgetPassScreenState extends State<forgetPassScreen> {
                                 content:
                                     Text("Check your email to reset password"),
                                 duration: Duration(seconds:3), 
-                                backgroundColor: Color(0xFF6AC1F2),// Set the duration (adjust as needed)
+                                backgroundColor: Color(0xFF8FA1E6),// Set the duration (adjust as needed)
                               ),
                             );
                           } on FirebaseAuthException catch (e) {
@@ -141,7 +141,7 @@ class _forgetPassScreenState extends State<forgetPassScreen> {
                           (print("not valid"));
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF2F80ED),
+                        backgroundColor: Color(0xFF3D1C65),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

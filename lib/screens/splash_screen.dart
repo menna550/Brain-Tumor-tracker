@@ -54,47 +54,52 @@ class _splash_screenState extends State<splash_screen> {
     return SafeArea(
         child: Container(
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-              Color(0xFF1B2B4D),
-              Color(0xFF004F9A),
-            ])),
+            // gradient: LinearGradient(
+            //     begin: Alignment.center,
+            //     end: Alignment.bottomCenter,
+            //     colors: [
+            //   // Color(0xFF1B2B4D),
+            //   // Color(0xFF004F9A),
+            //   Color(0xFF3D1C65),
+            //   Color(0xFF6B5289),
+            // ])
+            color: Color(0xFF3D1C65)
+            ),
           child: Scaffold(
                 backgroundColor: Colors.transparent,
                 body: Stack(
           children: [
+            // Positioned(
+            //   top: -268,
+            //   left: -229,
+            //   child: Container(
+            //     height: 409,
+            //     width: 409,
+            //     decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(409),
+            //       color: Color(0xFFAAC0E3),
+            //     ),
+            //   ),
+            // ),
+            // Positioned(
+            //   top: 632,
+            //   left: 175,
+            //   child: Container(
+            //     height: 268,
+            //     width: 268,
+            //     decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(268),
+            //       color: Color(0xFFAAC0E3),
+            //     ),
+            //   ),
+            // ),
             Positioned(
-              top: -268,
-              left: -229,
-              child: Container(
-                height: 409,
-                width: 409,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(409),
-                  color: Color(0xFFAAC0E3),
-                ),
-              ),
-            ),
+                top: 120.0,
+                right: 10,
+                // child:Image.asset("assets/splashBrain.png"),),
+                child:Image.asset("assets/purpleBrain2.png"),),
             Positioned(
-              top: 632,
-              left: 175,
-              child: Container(
-                height: 268,
-                width: 268,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(268),
-                  color: Color(0xFFAAC0E3),
-                ),
-              ),
-            ),
-            Positioned(
-                top: 80.0,
-                left: 22.42,
-                child:Image.asset("assets/splashBrain.png"),),
-            Positioned(
-                top: 150.0 + 255.73 + 10,
+                top: 155.0 + 256 ,
                 left: 34.0,
                 child: RichText(
                   text: TextSpan(children: [
@@ -103,7 +108,8 @@ class _splash_screenState extends State<splash_screen> {
                       style: GoogleFonts.inter(
                           fontSize: 26,
                           fontWeight: FontWeight.w900,
-                          color: Color(0xFF7A9FD7)),
+                          // color: Color(0xFF7A9FD7)),
+                          color: Color(0xFF8FA1E6)),
                     ),
                     TextSpan(
                       text: "T U M O R T R C K E R",

@@ -1,7 +1,7 @@
 {
     "Hi": "مرحبًا",
     "paragraph": "نتمنّى لكَ الشِفاء العاجل\nدعنا نطمئِن على صِحتِكَ",
-    "paragraph2":"تأكد من وضع 4 صورة من النوع MRI أو CT scan",
+    "paragraph2":"تأكد من وضع صورة من النوع MRI أو CT scan",
     "Detection":"إذا أردت إجراء\nعملية الDetection",
     "segmentation":"إذا اردت إجراء\nعملية الSegmentation",
     "home": "الصفحة الرئيسية",
